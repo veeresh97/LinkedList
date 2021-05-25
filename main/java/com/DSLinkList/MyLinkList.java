@@ -73,5 +73,23 @@ public class MyLinkList<K> {
         }
         return false;
     }
+    public void deleteNode(INode myNode) {
+        INode tempNode = head;
+        INode previousNode = null;
+        while(tempNode != null && tempNode.getKey() != myNode.getKey()) {
+            previousNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        previousNode.setNext(tempNode.getNext());
+    }
+    public int getSize() {
+        int size = 0;
+        INode tempNode = head;
+        while (tempNode != null) {
+            size++;
+            tempNode = tempNode.getNext();
+        }
+        return size;
+    }
 }
 
